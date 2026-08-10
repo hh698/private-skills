@@ -1,0 +1,4 @@
+interface:
+  display_name: "媒体使用画像报告"
+  short_description: "分析抖音/B站/小红书等平台的浏览偏好并生成可视化报告"
+  default_prompt: "Use $media-usage-report to analyze my recent B站/抖音/小红书 browsing preferences and generate a visual report page."

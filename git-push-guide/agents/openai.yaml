@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git Push Guide"
+  short_description: "Safe GitHub push workflow with API fallback"
+  default_prompt: "Use $git-push-guide to safely publish this project to GitHub."

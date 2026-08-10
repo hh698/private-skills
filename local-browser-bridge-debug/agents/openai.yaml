@@ -1,0 +1,4 @@
+interface:
+  display_name: "Local Browser Bridge Debug"
+  short_description: "诊断 bb-browser、CDP 与浏览器登录态桥接问题"
+  default_prompt: "请先诊断本地浏览器桥接、CDP 端口、bb-browser daemon 和登录态来源，再处理当前网页工具问题。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Anchor Management"
+  short_description: "记录项目锚点、开发基准、变更边界与安全回退管理流程"
+  default_prompt: "请先识别当前项目锚点、用户确认的基准和允许的变更范围，再进行修改或回退。"
