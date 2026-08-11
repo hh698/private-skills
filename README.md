@@ -11,6 +11,7 @@
 | `windows-local-service-lifecycle` | 管理 Windows 本地 Web 服务、采集服务、浏览器进程和子进程的启动、端口复用及关闭。 |
 | `project-anchor-management` | 管理项目中的锚点版本、用户确认的基准、变更边界和安全回退。 |
 | `git-push-guide` | 审核本地文件并安全提交、推送到 GitHub，处理认证、网络和 Git HTTPS 异常。 |
+| `safe-disk-cleanup` | 审计并安全清理跨盘符的可再生缓存，默认将非系统产物放到 `F:\codex`。 |
 
 ## 详细说明
 
@@ -91,6 +92,7 @@
 用于 Windows 多盘符空间审计和缓存清理，遵循“审计—预览—确认—执行—验证”流程。默认只读，清理时只接受用户确认过的精确目录，跳过系统目录、凭据、数据库、项目文件、重解析点和被占用文件。
 
 - 脚本：`safe-disk-cleanup/scripts/clean_disk.ps1`
+- 详细文档：[safe-disk-cleanup/SKILL.md](safe-disk-cleanup/SKILL.md)
 - 默认日志目录：`F:\codex\logs\disk-cleanup`
 - 推荐工作根目录：`F:\codex`
 - 适用对象：用户临时文件、npm/npx/node-gyp 缓存、浏览器/WebView 缓存和其他经确认可再生成的目录。
