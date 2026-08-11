@@ -75,6 +75,17 @@
 
 它还明确区分 GitHub 网页登录状态、Git 凭据和本地仓库状态，避免因为浏览器已打开 GitHub 就误判 Git push 一定可用。
 
+### 6. safe-disk-cleanup
+
+用于 Windows 多盘符空间审计和缓存清理，遵循“审计—预览—确认—执行—验证”流程。默认只读，清理时只接受用户确认过的精确目录，跳过系统目录、凭据、数据库、项目文件、重解析点和被占用文件。
+
+- 脚本：`safe-disk-cleanup/scripts/clean_disk.ps1`
+- 详细文档：[safe-disk-cleanup/SKILL.md](safe-disk-cleanup/SKILL.md)
+- 默认日志目录：`F:\codex\logs\disk-cleanup`
+- 推荐工作根目录：`F:\codex`
+- 适用对象：用户临时文件、npm/npx/node-gyp 缓存、浏览器/WebView 缓存和其他经确认可再生成的目录。
+- 不处理：Codex 运行时、登录状态、会话数据库、Cookie、Windows 系统文件、已安装程序和用途不明的应用目录。
+
 ## 推荐协作顺序
 
 开发本地流媒体查询工具时，推荐按以下顺序使用：
@@ -86,17 +97,6 @@
 5. 使用 `git-push-guide` 审核文件并发布到 GitHub。
 
 ## 使用原则
-
-### 6. safe-disk-cleanup
-
-用于 Windows 多盘符空间审计和缓存清理，遵循“审计—预览—确认—执行—验证”流程。默认只读，清理时只接受用户确认过的精确目录，跳过系统目录、凭据、数据库、项目文件、重解析点和被占用文件。
-
-- 脚本：`safe-disk-cleanup/scripts/clean_disk.ps1`
-- 详细文档：[safe-disk-cleanup/SKILL.md](safe-disk-cleanup/SKILL.md)
-- 默认日志目录：`F:\codex\logs\disk-cleanup`
-- 推荐工作根目录：`F:\codex`
-- 适用对象：用户临时文件、npm/npx/node-gyp 缓存、浏览器/WebView 缓存和其他经确认可再生成的目录。
-- 不处理：Codex 运行时、登录状态、会话数据库、Cookie、Windows 系统文件、已安装程序和用途不明的应用目录。
 
 - 先确认数据来源，再修改采集逻辑。
 - 健康检查接口应保持只读，不应因为刷新页面而自动打开浏览器。
