@@ -1,0 +1,4 @@
+interface:
+  display_name: "Safe Disk Cleanup"
+  short_description: "审计并安全清理跨盘符的可再生缓存"
+  default_prompt: "请用 $safe-disk-cleanup 先审计磁盘候选，再在我确认后清理可再生缓存并验证结果。"
