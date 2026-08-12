@@ -1,0 +1,4 @@
+interface:
+  display_name: "测试工程师简历模板"
+  short_description: "基于两页 PDF 简历生成校订稿与薪资投递变体文件。"
+  default_prompt: "Use $resume-salary-variants to revise a two-page test-engineer resume and create salary variants."
