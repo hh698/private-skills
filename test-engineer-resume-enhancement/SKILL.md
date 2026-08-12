@@ -1,9 +1,9 @@
 ---
-name: resume-salary-variants
-description: Use when revising a two-page Chinese test-engineer resume PDF in an existing sidebar layout, resolving PDF annotation feedback, checking wording and page layout, or creating salary-specific application variants while preserving all other content.
+name: test-engineer-resume-enhancement
+description: Use when reviewing, enhancing, or revising a Chinese test-engineer resume PDF while preserving its factual basis and existing two-page visual style, including addressing PDF annotations, wording, skills, work history, projects, and final layout quality.
 ---
 
-# Test Engineer Resume PDF Template
+# Test Engineer Resume Enhancement
 
 Use the supplied resume PDF as the layout anchor. Preserve its module order, visual hierarchy, page count, and factual scope; improve wording only when the source supports it.
 
@@ -25,7 +25,7 @@ Use the supplied resume PDF as the layout anchor. Preserve its module order, vis
 | Projects | Preserve the four submodules: background, goal, personal responsibilities, achievement. Keep existing verified data; do not add guessed metrics. |
 | Final PDF | Maximum two pages, no overlap, truncation, orphan punctuation, or visibly sparse final lines. |
 
-## Salary variants
+## Optional salary field variants
 
 Use `scripts/create_salary_variants.py` only after the base resume has passed visual review. The script writes a separate PDF for each salary and changes only the first occurrence of the target field on page 1. Its default salary set is `8k`, `8-9k`, `9k`, `9-10k`, `10k`, `10-11k`, `11k`, and `12k`.
 

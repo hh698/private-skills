@@ -1,0 +1,4 @@
+interface:
+  display_name: "测试工程师简历优化增强"
+  short_description: "优化两页测试工程师 PDF 简历内容、表达与版式质量。"
+  default_prompt: "Use $test-engineer-resume-enhancement to optimize my two-page test-engineer resume PDF."

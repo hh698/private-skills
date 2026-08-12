@@ -17,7 +17,7 @@ SKILL_DIR = Path(__file__).resolve().parents[1]
 SCRIPT_PATH = SKILL_DIR / "scripts" / "create_salary_variants.py"
 
 
-class SalaryVariantScriptTests(unittest.TestCase):
+class ResumeEnhancementToolTests(unittest.TestCase):
     def test_exposes_expected_salary_options(self):
         """支持会话中约定的八种期望月薪选项。"""
         spec = importlib.util.spec_from_file_location("salary_variants", SCRIPT_PATH)
