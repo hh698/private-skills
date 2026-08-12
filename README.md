@@ -13,6 +13,7 @@
 | `git-push-guide` | 审核本地文件并安全提交、推送到 GitHub，处理认证、网络和 Git HTTPS 异常。 |
 | `safe-disk-cleanup` | 审计并安全清理跨盘符的可再生缓存，默认将非系统产物放到 `F:\codex`。 |
 | `test-engineer-resume-enhancement` | 在保留两页测试工程师 PDF 简历版式与事实边界的前提下，优化内容表达、标注修订、通篇校对和最终版式。 |
+| `resume-interview-analysis` | 根据上传简历生成覆盖主问题、全量追问、真实回答和现场实操答案的面试解析文档。 |
 
 ## 详细说明
 
@@ -94,6 +95,19 @@
 - 主能力：根据原始经历优化测试工程师的技能、工作经历、项目经历与自我评价；修订 PDF 标注后对两页版式进行视觉验收。
 - 可选脚本：`test-engineer-resume-enhancement/scripts/create_salary_variants.py`，可在基准简历已审核后，仅覆盖第一页的“期望月薪”字段；第 2 页及其他正文保持不变。
 - 安全边界：不将简历原件、头像、联系方式、公司经历、项目数据或任何生成 PDF 纳入技能仓库；所有事实和数据必须来自用户提供的原始简历。
+
+### 8. resume-interview-analysis
+
+用于从中文 PDF、Word 或简历文本生成测试工程师、自动化测试工程师及相近技术岗位的面试问题与回答解析。它会：
+
+- 按个人介绍、HR、技能栈、工作经历、项目深挖、行为题和现场实操逐板块拆解简历。
+- 对每个主问题展开完整追问链，并为每一个追问给出单独答案，不把追问当作目录标题。
+- 区分真实简历事实、合理推断和待确认信息；主观题使用真实候选人口吻，技术题提供准确的代码、SQL、断言、配置或命令。
+- 覆盖 Pytest/Requests、Postman、SQL、Playwright/Selenium、JMeter、Jenkins、Linux/K8S 和测试设计等现场题型。
+- 在面试前必须准备的六类真实材料中，给出材料用途、展示方式、可能追问和候选人的实打实回答。
+- 默认生成经过渲染检查的 DOCX；不覆盖既有文件，不将原始简历、联系方式、公司内部数据或生成的个人文档放入 Skill 仓库。
+
+详细说明：[resume-interview-analysis/SKILL.md](resume-interview-analysis/SKILL.md)
 
 ## 推荐协作顺序
 

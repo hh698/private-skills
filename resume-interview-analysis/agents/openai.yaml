@@ -1,0 +1,3 @@
+interface:
+  display_name: "简历面试问答解析"
+  short_description: "从简历生成全量面试问题、追问、回答与现场实操答案"
