@@ -4,6 +4,7 @@ import importlib.util
 import hashlib
 import tempfile
 import unittest
+import warnings
 from pathlib import Path
 
 import pymupdf
@@ -55,12 +56,14 @@ class SalaryVariantScriptTests(unittest.TestCase):
         pdf.drawString(40, 800, "第二页保持不变")
         pdf.save()
 
-        paths = module.create_variants(
-            source_path,
-            root / "variants",
-            ("8k",),
-            font_path=font_path,
-        )
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", DeprecationWarning)
+            paths = module.create_variants(
+                source_path,
+                root / "variants",
+                ("8k",),
+                font_path=font_path,
+            )
         variant = pymupdf.open(paths[0])
         original = pymupdf.open(source_path)
         self.assertEqual(variant.page_count, 2)

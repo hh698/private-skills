@@ -123,10 +123,9 @@ def create_variants(
         )
         source = PdfReader(str(source_pdf))
         overlay = PdfReader(str(overlay_path))
-        source.pages[0].merge_page(overlay.pages[0])
-        writer = PdfWriter()
-        for page in source.pages:
-            writer.add_page(page)
+        writer = PdfWriter(clone_from=source)
+        # 先将页面挂载到 writer，再叠加内容，避免 pypdf 未来版本的弃用路径。
+        writer.pages[0].merge_page(overlay.pages[0])
         with output_path.open("wb") as stream:
             writer.write(stream)
         created.append(output_path)
